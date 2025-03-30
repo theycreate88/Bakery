@@ -7,7 +7,48 @@
 
     <style>
 
-        
+        /* Default styles for desktop */
+body {
+  font-size: 16px;
+  padding: 20px;
+}
+
+/* Apply styles when screen width is 768px or less (Tablets & Mobiles) */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .container {
+    flex-direction: column; /* Stack elements vertically */
+    text-align: center; /* Center align text */
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .sidebar {
+    display: none; /* Hide sidebar for mobile */
+  }
+}
+
+/* Apply styles for very small screens (Phones) */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+
+  .container {
+    padding: 5px;
+  }
+
+  .menu {
+    font-size: 14px;
+  }
+}
+
         /* General Styling */
         body {
             font-family: Arial, sans-serif;
