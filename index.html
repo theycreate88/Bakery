@@ -6,47 +6,52 @@
     <title>Document</title>
 <style>
 
-    /* Default styles for desktop */
-body {
-  font-size: 16px;
-  padding: 20px;
+ 
+ 
+@media screen and (max-width: 1024px) {
+    #welcomediv {
+        padding-top: 150px;
+        padding-left: 200px;
+        text-align: center;
+    }
 }
 
-/* Apply styles when screen width is 768px or less (Tablets & Mobiles) */
 @media screen and (max-width: 768px) {
-  body {
-    font-size: 14px;
-    padding: 10px;
-  }
+    #welcomediv {
+        padding-top: 100px;
+        padding-left: 50px;
+        text-align: center;
+    }
 
-  .container {
-    flex-direction: column; /* Stack elements vertically */
-    text-align: center; /* Center align text */
-  }
-
-  .menu {
-    display: block;
-  }
-
-  .sidebar {
-    display: none; /* Hide sidebar for mobile */
-  }
+    #button {
+        margin-left: 0;
+        display: inline-block;
+        width: 120px;
+        height: 30px;
+        font-size: 14px;
+    }
 }
 
-/* Apply styles for very small screens (Phones) */
 @media screen and (max-width: 480px) {
-  body {
-    font-size: 12px;
-  }
+    #welcomediv {
+        padding-top: 50px;
+        padding-left: 10px;
+        text-align: center;
+    }
 
-  .container {
-    padding: 5px;
-  }
+    h1 {
+        font-size: 20px;
+    }
 
-  .menu {
-    font-size: 14px;
-  }
+    #button {
+        width: 100px;
+        height: 25px;
+        font-size: 12px;
+        padding: 5px;
+    }
 }
+
+ 
 
     hr{border-color:rgba(175, 152, 21, 0.848);}
     body{
