@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+           
+ 
+        /* Header Styling */
+        .header {
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            color: black;
+            padding: 10px 0;
+            position: sticky;
+            padding-top: 20px;
+            z-index: 10; /* Ensure header is above slider */
+        }
+
+        .header-item {
+            position: relative;
+            padding: 10px 20px;
+            color: rgb(175, 130, 71);
+            font-size: 16px;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-weight: bolder;
+            z-index: 15; /* Ensure items appear above the slider */
+            
+      
+        }
+
+        .header-item:hover {
+            color: gray;
+            
+        }
+
+        /* Curtain Drop Styling */
+        .curtain {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background-color: white;
+            color: brown;
+            font-weight: bolder;
+
+            border-width: 2px;
+            border-style: groove;
+            border-top: none;
+            border-color: pink;
+
+            overflow: hidden;
+            transition: height 0.3s ease;
+            text-align: center;
+            padding: 0 20px;
+            line-height: 1.5rem;
+            z-index: 20; /* Ensure curtains are in front of the slider */
+        }
+
+        .header-item:hover .curtain {
+            height: 200px;
+            width:max-content;
+        }
+
+        /* ========== SLIDER STYLES ========== */
+    .slider-container {
+    width: 800px;
+    height: 400px; /* Match the image height */
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 370px;
+}
+
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #222;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 50%;
+            transition: background 0.3s ease-in-out;
+            z-index: 10; /* Ensure buttons are clickable */
+        }
+
+        .nav-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        #prev {
+            left: 20px;
+        }
+
+        #next {
+            right: 20px;
+        }
+
+        /* Dots Styling */
+        .dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            margin: 0 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: black;
+        }
+
+        main{background-color:wheat;
+             padding-top: 10px;}
+
+        hr{margin-top: 40px;
+            border-color: #f4a261;}
+
+        #welcomediv{display: flex;
+            background-color: black;
+            color: white;
+            margin-top: 70px;
+                   padding-top: 40px;
+                   padding-left: 50px;
+                   padding-bottom: 20px;}
+
+                   #imgdiv{margin-left: 20px;}
+
+            #welcometext{padding-left: 80px;}
+            #img1{ 
+                  height: 300px;
+                  width: 300px;}
+            #div2{
+                display: flex;
+                background-color: rgb(230, 194, 146);
+                padding-top: 60px;
+                padding-bottom: 20px;
+                padding-left: 45px;  overflow: hidden; /* Prevent layout shift */
+                transition: transform 0.7s ease-in-out;
+            }
+            #div2:hover{opacity: 1.2;
+                transform: scale(1.01);
+               }
+
+            #div22{padding-right: 40px;
+                ;}
+
+            #img22{border-radius: 20px;
+                transition: transform 0.5s ease-in-out;}
+            #img22:hover{transform: scale(1.02);
+               
+                opacity: 1.2; }
+            #div23{padding-right: 40px;}
+            #img23{border-radius: 20px;
+                transition: transform 0.5s ease-in-out;}
+            #img23:hover{transform: scale(1.02);
+              
+                opacity: 1.2;}
+            a{text-decoration: none;}
+            #menubutton{display: inline-block;
+                        background-color: rgb(162, 95, 8);
+                        height: 30px;                 
+                        width: 340px;
+                        padding-left: 230px;
+                        padding-top: 10px;
+                        font-weight: bold;
+                        color: bisque;}
+            #menubutton:hover{opacity: 0.9;}
+
+            #div3{display: flex;
+                  color: black;
+                  background-color:rgb(142, 83, 5);
+                  padding-left: 40px;
+                  padding-top: 40px;
+                  padding-bottom: 30px;
+                  overflow: hidden; /* Prevent layout shift */
+                  transition: transform 0.7s ease-in-out;}
+
+            #div3:hover{opacity: 1.2;
+                transform: scale(1.01);
+               }
+
+            #div32{padding-left: 15px;}
+            #img31{border-style:outset;
+                border-color:rgb(142, 83, 5); ;
+                border-radius: 20px;
+                transition: transform 0.7s ease-in-out;}
+            #img31:hover{transform: scale(1.02);
+               
+                opacity: 0.9;}
+            #img32{border-radius: 12px;
+                   margin-bottom: 10px;
+                   border-style:inset;
+                   border-color:rgb(142, 83, 5);
+                   transition: transform 0.7s ease-in-out;}
+            #img32:hover{transform: scale(1.02);
+              
+                opacity: 0.9;}
+            #img33{border-radius: 12px;
+                border-style:outset;
+                border-color:rgb(142, 83, 5);
+                transition: transform 0.7s ease-in-out;}
+            #img33:hover{transform: scale(1.02);
+               
+                opacity: 0.9;}
+            #div33{padding-left: 30px;
+                   padding-top: 20px;}
+
+            #div4{align-content: center; padding-left: 600px;
+                 width: 1510px;font-weight: bolder;
+    height: 200px;
+    background-image: url('https://www.shutterstock.com/image-vector/abstract-botanical-art-background-tropical-260nw-2480645167.jpg');
+    opacity: 0.4;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;}
+    </style>
+</head>
+
+<body>
+
+<hr>
+    <header class="header">
+        <a class="header-item">
+            Home
+            <div class="curtain">
+                Welcome to our homepage! Explore more about us.
+            </div>
+        </a>
+
+        <a class="header-item">
+            Menu
+            <div class="curtain">
+                 <h1>Bestselling Products</h1>
+            </div>
+        </a>
+        <a class="header-item">
+            About
+            <div class="curtain">
+                Learn about our mission, vision, and team.
+            </div>
+        </a>
+
+        <img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/270887916/original/bf2e26553be397efce337e9bbe3021ef6ed23994/design-incredible-bakery-logo.jpg" alt="" height="80px">
+        <a class="header-item">
+            Social Media
+            <div class="curtain">
+                Discover the services we provide to our clients.
+            </div>
+        </a>
+        <a class="header-item">
+            Contact
+            <div class="curtain">
+                Get in touch with us for any inquiries.
+            </div>
+        </a>
+    </header> 
+ 
+ <main>
+
+    <!-- SLIDER -->
+    <div id="sliderback" class="slider-container">
+        <button id="prev" class="nav-button">&#10094;</button>
+    <div class="slider">
+            <div class="slide"><img src="https://thumbs.dreamstime.com/z/horizontal-seamless-background-various-bakery-products-vector-illustration-your-design-87441271.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="https://res.cloudinary.com/hksqkdlah/image/upload/ar_1:1,c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_344/SFS_Chocolate-Espresso_Dacquoise_018_vwrw8i" alt="Image 2"></div>
+            <div class="slide"><img src="https://th.bing.com/th/id/R.8fbffa3d5bc98836e7020b667f4331a2?rik=nJqyc43A1EYlcA&pid=ImgRaw&r=0" alt="Image 3"></div>
+            <div class="slide"><img src="https://junandus.com.my/wp-content/uploads/2019/09/Snickers-Chocolate-Cake-3.jpg" alt="Image 4"></div>
+            <div class="slide"><img src="https://th.bing.com/th/id/OIP.keTq07Ye3XU9-O_-gxB9ogAAAA?rs=1&pid=ImgDetMain" alt="Image 5"></div>
+    </div>
+        <button id="next" class="nav-button">&#10095;</button>
+    </div>
+
+    <!-- Dots for navigation -->
+    <div class="dots"></div>
+
+    <div id="welcomediv">
+        <div id="imgdiv">
+            <img src="https://img.freepik.com/premium-psd/chocolate-cake-social-media-banner-post-design-template_619264-230.jpg?w=2000" alt="" id="img1">
+        </div>
+
+        <div id="welcometext">
+            <h1>WELCOME TO
+                Layers Bakeshop</h1>
+            <p>Like a fantasy that feels unreal, every delicacy by ‘Layers’ holds a charm that enchants with every bite,<br>
+                 allowing one to be swept into a moment of bliss, making all your dessert creams come true! <br>
+                Founded in Lahore in 2020, the philosophy of Layers Bakeshop was simple;<br>
+                 to create connections through desserts while striking the ideal balance between flavor and feeling. <br>
+                
+                Since the beginning, Layers has secured an irreplaceable spot in the hearts of people.</p>
+        </div>
+    </div>
+                                                
+    <div id="div2">
+        <div id="div21">
+        <h1>INTRODUCING OUR Wide Variety of Delicious Cakes</h1>
+        <p>Being the quintessential representation of aesthetics and taste, a Layers dessert <br> is consumed by the eyes well before delighting the tastebuds!
+   A Layers dessert <br>sweeps you away into a sweet fantasy, where your wildest dessert dreams <br> are realized. Infused with decadent magic, every flavor dances on the palette to <br> a sweet symphony.</p>
+    <br><br><a href="enterpage.html" id="menubutton">Our Menu</a> 
+</div>
+
+        <div id="div22">
+            <img src="https://th.bing.com/th/id/OIP.xTTZ_kx0B-0othzDe9rkrwHaHa?rs=1&pid=ImgDetMain" alt="" height="400px" width="400px" id="img22">
+        </div> 
+                                                                       
+        <div id="div23">
+            <img src="https://bkmedia.bakingo.com/belgium-chocolate-mousse-cake-cake3217beli-B.jpg?tr=h-320,w-320" alt="" height="400px" width="400px" id="img23">
+        </div>
+    </div>
+
+    <div id="div3">
+
+        <div id="div31"><img src="https://img.freepik.com/premium-photo/box-dark-chocolate-truffles-with-brown-box-chocolates-side_771703-5574.jpg" alt="" height="380px" width="380px" id="img31"></div>
+        <div id="div32"><img src="https://cdn.pixabay.com/photo/2023/11/27/16/47/box-8415761_960_720.jpg" alt="" height="180px" width="250px" id="img32">
+            <img src="https://img.freepik.com/premium-photo/elegant-truffle-artistry_882186-11230.jpg" alt=""height="180px" width="250px" id="img33"></div>
+        <div id="div33"><h1>Experience Luxary</h1><p>Like a fantasy that feels unreal, every delicacy by ‘Layers’ holds a charm that enchants with every bite,
+             allowing one to be swept into a moment of bliss, making all your dessert creams come true!Founded in Lahore <br> in 2020,the philosophy of Layers Bakeshop was simple; to create connections through desserts while <br> striking the ideal balance between flavor and feeling.
+            
+            Since the beginning, Layers has secured an irreplaceable spot in the hearts of people.</p></div>
+
+       
+    </div>
+
+    <div id="div4"><p>&copy; All rights reserved | Our Bakery Dera Ismail Khan</p> </div>
+</main>
+</body>
+    <script>
+        const slider = document.querySelector(".slider");
+        const slides = document.querySelectorAll(".slide");
+        const nextButton = document.getElementById("next");
+        const prevButton = document.getElementById("prev");
+        const dotsContainer = document.querySelector(".dots");
+
+        let index = 0;
+        const totalSlides = slides.length;
+        let autoSlideInterval;
+
+        // Create dots dynamically
+        slides.forEach((_, i) => {
+            const dot = document.createElement("div");
+            dot.classList.add("dot");
+            if (i === 0) dot.classList.add("active");
+            dot.addEventListener("click", () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll(".dot");
+
+        function updateSlide() {
+            slider.style.transform = `translateX(-${index * 100}%)`;
+            updateDots();
+        }
+
+        function nextSlide() {
+            index = (index + 1) % totalSlides;
+            updateSlide();
+        }
+
+        function prevSlide() {
+            index = (index - 1 + totalSlides) % totalSlides;
+            updateSlide();
+        }
+
+        function goToSlide(slideIndex) {
+            index = slideIndex;
+            updateSlide();
+            resetAutoSlide();
+        }
+
+        function updateDots() {
+            dots.forEach((dot, i) => {
+                dot.classList.toggle("active", i === index);
+            });
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 3000);
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+
+        nextButton.addEventListener("click", () => {
+            nextSlide();
+            resetAutoSlide();
+        });
+
+        prevButton.addEventListener("click", () => {
+            prevSlide();
+            resetAutoSlide();
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowRight") nextButton.click();
+            if (event.key === "ArrowLeft") prevButton.click();
+        });
+
+        startAutoSlide();
+    </script>
+
+</html>
