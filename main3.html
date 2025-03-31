@@ -271,13 +271,7 @@
     background-position: center;
     background-repeat: no-repeat;}
 
-@media (hover: none) {
-    .curtain.active {
-        transform: translateY(0);
-    }
-}
-
-
+ 
      @media screen and (max-width: 768px) {
     /* Adjust header */
     .header {
@@ -290,6 +284,7 @@
     .header-item {
         padding: 5px 10px;
         font-size: 14px;
+        color:white;
     }
 
     .curtain {
@@ -564,19 +559,7 @@
 
 
 
-        document.addEventListener("DOMContentLoaded", function () {
-    const header = document.querySelector(".header");
-    const curtain = document.querySelector(".curtain");
-
-    header.addEventListener("click", function () {
-        curtain.classList.toggle("active");
-    });
-
-    curtain.addEventListener("click", function () {
-        curtain.classList.remove("active");
-    });
-});
-
+      
     </script>
 
 </html>
