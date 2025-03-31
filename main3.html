@@ -271,6 +271,11 @@
     background-position: center;
     background-repeat: no-repeat;}
 
+@media (hover: none) {
+    .curtain.active {
+        transform: translateY(0);
+    }
+}
 
 
      @media screen and (max-width: 768px) {
@@ -556,6 +561,22 @@
         });
 
         startAutoSlide();
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const header = document.querySelector(".header");
+    const curtain = document.querySelector(".curtain");
+
+    header.addEventListener("click", function () {
+        curtain.classList.toggle("active");
+    });
+
+    curtain.addEventListener("click", function () {
+        curtain.classList.remove("active");
+    });
+});
+
     </script>
 
 </html>
