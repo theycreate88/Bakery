@@ -10,22 +10,47 @@
  
  
    
-@media (max-width: 768px) {
-    #welcomediv {
-        padding-left: 10px; /* Reduce padding for better alignment */
-        text-align: center; /* Center align text */
-        padding-top: 100px;
+  @media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+        padding-top: 10px;
     }
 
-    #button {
-        margin: 20px auto;
-        display: block;
-        width: 120px; /* Increase button size for better usability */
-        height: 30px;
-        font-size: 16px;
+    .header-item {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .slider-container {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+    }
+
+    .slider img {
+        width: 100%;
+        height: auto;
+    }
+
+    #welcomediv, #div2, #div3 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    #img1, #img22, #img23, #img31, #img32, #img33 {
+        width: 90%;
+        height:  400px;
+        max-width: 400px;
+    }
+
+    #div4 {
+        padding-left: 0;
+        text-align: center;
+        width: 100%;
     }
 }
-
 
  
 
