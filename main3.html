@@ -273,47 +273,92 @@
 
 
 
-        @media (max-width: 768px) {
+     @media screen and (max-width: 768px) {
+    /* Adjust header */
     .header {
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         padding-top: 10px;
     }
 
     .header-item {
+        padding: 5px 10px;
         font-size: 14px;
-        padding: 8px;
     }
 
+    .curtain {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    /* Adjust slider */
     .slider-container {
         width: 100%;
-        height: auto;
-        margin-left: 0;
+        height: 250px; /* Reduce height for smaller screens */
+        margin: 10px auto;
     }
 
-    .slider img {
-        width: 100%;
-        height: auto;
-    }
-
-    #welcomediv, #div2, #div3 {
+    /* Adjust welcome section */
+    #welcomediv {
         flex-direction: column;
         align-items: center;
         text-align: center;
         padding: 20px;
     }
 
-    #img1, #img22, #img23, #img31, #img32, #img33 {
-        width: 90%;
-        height:  400px;
-        max-width: 400px;
+    #welcometext {
+        padding-left: 0;
     }
 
+    #img1 {
+        height: 200px;
+        width: 200px;
+    }
+
+    /* Adjust section 2 */
+    #div2 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    #div22, #div23 {
+        padding: 0;
+    }
+
+    #img22, #img23 {
+        width: 80%;
+        height: auto;
+    }
+
+    /* Adjust section 3 */
+    #div3 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    #div31, #div32, #div33 {
+        padding: 10px;
+    }
+
+    #img31, #img32, #img33 {
+        width: 80%;
+        height: auto;
+    }
+
+    /* Footer */
     #div4 {
         padding-left: 0;
         text-align: center;
         width: 100%;
     }
 }
+
  
     </style>
 </head>
